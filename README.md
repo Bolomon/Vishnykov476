@@ -76,3 +76,25 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Настройка сервера
+
+HTTP = Apache_2.4-PHP_7.2-7.4 + Nginx_1.17
+PHP = PHP_7.4
+DB = MySQL-8.0
+
+## Настройка проекта
+
+После установки проекта необходимо выполнить команду 'composer update'.
+
+В файле .env необходимо заполнить поля  
+  DB_DATABASE= название базы данных.
+  DB_USERNAME= логин от базы данных.
+  DB_PASSWORD= пароль от базы данных.  
+
+  MAIL_HOST= smtp сервиса, с которого будет отправляться письма. (у gmail 'smtp.gmail.com').
+  MAIL_PORT= порт.
+  MAIL_USERNAME= логин от почты.
+  MAIL_PASSWORD= пароль от почты.
+
+Далее следует выполнить команды 'php artisan migrate' и 'php artisan migrate:fresh --seed' после чего будет создан пользователь login: admin@gmail.com; pass: admin; (эти данные можно поменять в файле 'database\seeds\DatabaseSeeder.php').
